@@ -1,0 +1,20 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+  <h2>Buscar Medicamento</h2>
+  <form method="GET" action="{% url 'buscar_medicamento' %}">
+    <input type="text" name="nombre" placeholder="Nombre del medicamento" required>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  {% if resultados %}
+    <h3>Resultados:</h3>
+    <ul>
+      {% for medicamento in resultados %}
+        <li>{{ medicamento.nombre }} - {{ medicamento.descripcion }}</li>
+      {% empty %}
+        <li>No se encontraron resultados.</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

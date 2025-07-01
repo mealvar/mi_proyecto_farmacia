@@ -1,0 +1,44 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Bienvenido a Farmacia Alvarez</h1>
+        <p class="lead">Tu espacio confiable para conocer más sobre medicamentos, farmacéuticos y entregas.</p>
+        <hr class="my-4">
+        <p>Utilizá el menú para agregar datos, buscar información o navegar por el sitio.</p>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Medicamentos</h5>
+                    <p class="card-text">Registrá nuevos medicamentos y gestioná la base de datos.</p>
+                    <a href="{% url 'crear_medicamento' %}" class="btn btn-primary">Agregar Medicamento</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-3 mt-md-0">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Farmacéuticos</h5>
+                    <p class="card-text">Ingresá datos de profesionales que trabajan en la farmacia.</p>
+                    <a href="{% url 'crear_farmaceutico' %}" class="btn btn-success">Agregar Farmacéutico</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-3 mt-md-0">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Entregas</h5>
+                    <p class="card-text">Gestioná entregas y pedidos de medicamentos a domicilio.</p>
+                    <a href="{% url 'crear_entregable' %}" class="btn btn-warning">Registrar Entrega</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

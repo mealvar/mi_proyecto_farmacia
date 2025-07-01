@@ -1,0 +1,22 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ titulo }}</h2>
+    <form method="get">
+        {{ formulario.as_p }}
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        <h3 class="mt-4">Resultados:</h3>
+        <ul>
+            {% for medicamento in resultados %}
+                <li>{{ medicamento.nombre }} - Droga: {{ medicamento.droga }} - Stock: {{ medicamento.stock }}</li>
+            {% endfor %}
+        </ul>
+    {% elif formulario.is_bound %}
+        <p class="mt-3">No se encontraron medicamentos.</p>
+    {% endif %}
+</div>
+{% endblock %}
