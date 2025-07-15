@@ -1,0 +1,59 @@
+{% extends 'app/padre.html' %}
+{% load static %}
+
+{% block title %}Acerca de mí{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center text-primary fw-bold">🌸 Acerca de mí 🌸</h1>
+
+    <div class="card shadow-lg border-0 p-4 bg-light">
+        <div class="card-body fs-5">
+            <p>
+                Me llamo <strong>Maria Elisa Álvarez</strong>, soy farmacéutica cordobesa con más turnos y guardias que fines de semana libres. Pero igual me hice un tiempito para meterme en esta nueva aventura: <span class="text-success fw-semibold">aprender a programar</span>.
+            </p>
+            <p>
+                La verdad, no sabía en qué me estaba metiendo... <em>¡y qué lindo quilombo resultó ser Python!</em> Al principio me hablaban de vistas, modelos y mixins, y yo pensaba: "¿esto es programación o una receta de cocina?". Pero a fuerza de prueba y error (y café), descubrí que me encantan los desafíos mentales, y que esto del código tiene su magia.
+            </p>
+            <p>
+                Además de pastillas, recetas y frameworks, me gusta el <span class="text-danger">fútbol</span> (jugarlo, no solo gritarlo), entreno en el gimnasio cada vez que puedo, y hace un tiempo empecé a estudiar <span class="text-warning">japonés</span>. Porque si vamos a complicarnos, ¡que sea en varios idiomas!
+            </p>
+            <p>
+                Este proyecto fue una <strong>locura hermosa</strong>: mezclé mi profesión con algo completamente nuevo y lo saqué adelante. Espero que se note el esfuerzo, la garra y, sobre todo, las ganas de aprender.
+            </p>
+            <p class="fst-italic text-secondary">
+                Y ya que estamos, profe… si este laburo no merece un aprobado, al menos merece un <span class="fw-semibold text-info">"¡qué bien lo vendiste!"</span> 😄
+            </p>
+        </div>
+    </div>
+
+    <!-- Galería decorada con Bootstrap -->
+    <h3 class="mt-5 mb-4 text-center text-secondary">Un poco de mí en imágenes</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="{% static 'app/images/foto1.jpg' %}" class="card-img-top rounded" alt="Foto 1">
+                <div class="card-body">
+                    <p class="card-text text-muted text-center"> こんにちは - Konnichiwa 📚</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="{% static 'app/images/foto2.jpg' %}" class="card-img-top rounded" alt="Foto 2">
+                <div class="card-body">
+                    <p class="card-text text-muted text-center"> Fin de una etapa 🎓 </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="{% static 'app/images/foto3.jpg' %}" class="card-img-top rounded" alt="Foto 3">
+                <div class="card-body">
+                    <p class="card-text text-muted text-center"> ⚽Campeonas de Liga Clausura 2024 ⚽</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

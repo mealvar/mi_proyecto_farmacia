@@ -1,0 +1,23 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<h2>Lista de Farmacéuticos</h2>
+
+<ul class="list-group">
+    {% for farmaceutico in farmaceuticos %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'detalle_farmaceutico' farmaceutico.pk %}">
+                {{ farmaceutico.nombre }} {{ farmaceutico.apellido }}
+            </a>
+            <span>
+                <a href="{% url 'editar_farmaceutico' farmaceutico.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                <a href="{% url 'eliminar_farmaceutico' farmaceutico.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+            </span>
+        </li>
+    {% empty %}
+        <li class="list-group-item">No hay farmacéuticos cargados.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'crear_farmaceutico' %}" class="btn btn-success mt-3">Crear nuevo farmacéutico</a>
+{% endblock %}  

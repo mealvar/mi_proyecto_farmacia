@@ -1,0 +1,33 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">🧪 Lista de Medicamentos</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for medicamento in medicamentos %}
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">{{ medicamento.nombre }}</h5>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="{% url 'detalle_medicamento' medicamento.pk %}" class="btn btn-outline-primary btn-sm">Ver</a>
+                        <a href="{% url 'editar_medicamento' medicamento.pk %}" class="btn btn-warning btn-sm">✏️ Editar</a>
+                        <a href="{% url 'eliminar_medicamento' medicamento.pk %}" class="btn btn-danger btn-sm">🗑 Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted text-center">No hay medicamentos cargados.</p>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{% url 'crear_medicamento' %}" class="btn btn-success">➕ Crear nuevo medicamento</a>
+    </div>
+</div>
+
+{% endblock %}

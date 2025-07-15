@@ -1,7 +1,51 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.sqlite3
-.venv/
-/venv/
+*.py[cod]
+*$py.class
+
+# Caches
+*.egg-info/
+.eggs/
+*.egg
 *.log
 
+# Django stuff:
+*.sqlite3
+db.sqlite3
+media/
+
+# Environments
+.env
+venv/
+ENV/
+env/
+
+# Static files
+/staticfiles/
+staticfiles/
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Logs
+*.log
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+
+# Pycharm project files
+.idea/
+
+# MacOS
+.DS_Store
+
+# Others
+*.bak
+*.swp

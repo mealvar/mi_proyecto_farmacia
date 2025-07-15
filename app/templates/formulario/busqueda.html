@@ -1,20 +1,30 @@
 {% extends 'app/padre.html' %}
 
 {% block content %}
-  <h2>Buscar Medicamento</h2>
-  <form method="GET" action="{% url 'buscar_medicamento' %}">
-    <input type="text" name="nombre" placeholder="Nombre del medicamento" required>
+<div class="container mt-4">
+  <h2 class="mb-4">Buscar Medicamento</h2>
+
+  <form method="GET" action="{% url 'buscar_medicamento' %}" class="mb-3 d-flex gap-2">
+    {{ formulario.nombre }}
     <button type="submit" class="btn btn-primary">Buscar</button>
   </form>
 
-  {% if resultados %}
-    <h3>Resultados:</h3>
-    <ul>
-      {% for medicamento in resultados %}
-        <li>{{ medicamento.nombre }} - {{ medicamento.descripcion }}</li>
-      {% empty %}
-        <li>No se encontraron resultados.</li>
-      {% endfor %}
-    </ul>
+  {% if error %}
+    <div class="alert alert-warning">{{ error }}</div>
   {% endif %}
+
+  {% if resultados %}
+    <div class="list-group">
+      {% for medicamento in resultados %}
+        <a href="{% url 'detalle_medicamento' medicamento.pk %}" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ medicamento.nombre }}</h5>
+            <small class="text-muted">Stock: {{ medicamento.stock }}</small>
+          </div>
+          <p class="mb-1">{{ medicamento.droga|truncatechars:100 }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
 {% endblock %}

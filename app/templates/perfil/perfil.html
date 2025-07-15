@@ -1,0 +1,46 @@
+{% extends 'app/padre.html' %}
+{% load static %}
+
+{% block title %}<span class="text-primary">Mi Perfil</span>{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center text-info fst-italic">Mi Perfil</h2>
+
+    <div class="card mx-auto shadow-sm" style="max-width: 600px; background-color: #f8f9fa;">
+        <div class="card-body text-center">
+            {% if request.user.perfil.avatar %}
+                <img src="{{ request.user.perfil.avatar.url }}" alt="Avatar" class="rounded-circle mb-3 border border-primary" width="150" height="150">
+            {% else %}
+                <div class="bg-secondary rounded-circle d-inline-block mb-3 text-white fw-bold" style="width: 150px; height: 150px; line-height: 150px;">
+                    Sin avatar
+                </div>
+            {% endif %}
+
+            <h4 class="card-title text-primary fw-bold">{{ request.user.username }}</h4>
+            <p class="text-muted mb-4 fst-italic">{{ request.user.email }}</p>
+
+            <ul class="list-group list-group-flush text-start mb-4">
+                <li class="list-group-item bg-white">
+                    <strong class="text-success fst-italic">Biografía:</strong><br>
+                    <span class="text-secondary">{{ request.user.perfil.biografia|default:"No hay biografía cargada" }}</span>
+                </li>
+                <li class="list-group-item bg-white">
+                    <strong class="text-success fst-italic">Link:</strong>
+                    {% if request.user.perfil.link %}
+                        <a href="{{ request.user.perfil.link }}" target="_blank" class="text-decoration-none text-primary">{{ request.user.perfil.link }}</a>
+                    {% else %}
+                        <span class="text-muted fst-italic">No hay link</span>
+                    {% endif %}
+                </li>
+                <li class="list-group-item bg-white">
+                    <strong class="text-success fst-italic">Fecha de cumpleaños:</strong>
+                    <span class="text-secondary">{{ request.user.perfil.fecha_cumpleanos|date:"d/m/Y"|default:"No especificada" }}</span>
+                </li>
+            </ul>
+
+            <a href="{% url 'editar_perfil' %}" class="btn btn-outline-primary fw-bold">Editar Perfil</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

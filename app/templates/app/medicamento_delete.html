@@ -1,0 +1,21 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="card border-danger shadow-sm">
+        <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">Confirmar eliminación</h4>
+        </div>
+        <div class="card-body">
+            <p class="fs-5">¿Estás seguro que querés eliminar <strong>"{{ object.nombre }}"</strong>?</p>
+
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger me-2">Eliminar</button>
+            </form>
+
+            <a href="{% url 'detalle_medicamento' object.pk %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

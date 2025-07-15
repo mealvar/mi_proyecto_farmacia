@@ -1,0 +1,30 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-body">
+            <h2 class="card-title mb-4">{{ medicamento.nombre }}</h2>
+
+            <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item"><strong>Droga:</strong> {{ medicamento.droga }}</li>
+                <li class="list-group-item"><strong>Stock:</strong> {{ medicamento.stock }}</li>
+            </ul>
+
+            {% if medicamento.imagen %}
+                <div class="mb-4 text-center">
+                    <img src="{{ medicamento.imagen.url }}" alt="{{ medicamento.nombre }}" class="img-fluid rounded" style="max-width: 300px;">
+                </div>
+            {% else %}
+                <p class="text-muted">No hay imagen disponible.</p>
+            {% endif %}
+
+            <div class="d-flex justify-content-between">
+                <a href="{% url 'editar_medicamento' medicamento.pk %}" class="btn btn-warning">✏️ Editar</a>
+                <a href="{% url 'eliminar_medicamento' medicamento.pk %}" class="btn btn-danger">🗑 Eliminar</a>
+                <a href="{% url 'listar_medicamentos' %}" class="btn btn-outline-secondary">⬅ Volver a la lista</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

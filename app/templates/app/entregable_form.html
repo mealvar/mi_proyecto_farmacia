@@ -1,0 +1,28 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">{{ verbo }} {{ titulo }}</h2>
+
+    {% if form.errors %}
+        <div class="alert alert-danger">Por favor corregí los errores en el formulario.</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="{{ formulario.nombre.id_for_label }}" class="form-label">Nombre</label>
+            {{ formulario.nombre }}
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ formulario.descripcion.id_for_label }}" class="form-label">Descripción</label>
+            {{ formulario.descripcion }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'listar_entregables' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,43 +1,67 @@
 {% extends 'app/padre.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container mt-5">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Bienvenido a Farmacia Alvarez</h1>
+        <h1 class="display-4">Bienvenido a Farmacia Álvarez</h1>
         <p class="lead">Tu espacio confiable para conocer más sobre medicamentos, farmacéuticos y entregas.</p>
         <hr class="my-4">
         <p>Utilizá el menú para agregar datos, buscar información o navegar por el sitio.</p>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Medicamentos</h5>
-                    <p class="card-text">Registrá nuevos medicamentos y gestioná la base de datos.</p>
-                    <a href="{% url 'crear_medicamento' %}" class="btn btn-primary">Agregar Medicamento</a>
+    <div class="row align-items-center g-4">
+        <!-- Imagen izquierda -->
+        <div class="col-12 col-md-3 text-center">
+            <img src="{% static 'app/images/foto4.jpg' %}" alt="Foto 4" class="img-fluid rounded shadow">
+            <p class="text-muted mt-2"></p>
+        </div>
+
+        <!-- Contenido central con botones -->
+        <div class="col-12 col-md-6">
+            <div class="row g-4">
+                <!-- Medicamentos -->
+                <div class="col-md-12">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Medicamentos</h5>
+                            <p class="card-text">Registrá nuevos medicamentos y gestioná la base de datos.</p>
+                            <a href="{% url 'crear_medicamento' %}" class="btn btn-primary mb-2 w-100">Agregar Medicamento</a>
+                            <a href="{% url 'listar_medicamentos' %}" class="btn btn-outline-primary w-100">Ver Medicamentos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Farmacéuticos -->
+                <div class="col-md-12">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Farmacéuticos</h5>
+                            <p class="card-text">Ingresá datos de profesionales que trabajan en la farmacia.</p>
+                            <a href="{% url 'crear_farmaceutico' %}" class="btn btn-success mb-2 w-100">Agregar Farmacéutico</a>
+                            <a href="{% url 'listar_farmaceuticos' %}" class="btn btn-outline-success w-100">Ver Farmacéuticos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entregas -->
+                <div class="col-md-12">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Entregas</h5>
+                            <p class="card-text">Gestioná entregas y pedidos de medicamentos a domicilio.</p>
+                            <a href="{% url 'crear_entregable' %}" class="btn btn-warning mb-2 w-100">Registrar Entrega</a>
+                            <a href="{% url 'listar_entregables' %}" class="btn btn-outline-warning w-100">Ver Entregas</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4 mt-3 mt-md-0">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Farmacéuticos</h5>
-                    <p class="card-text">Ingresá datos de profesionales que trabajan en la farmacia.</p>
-                    <a href="{% url 'crear_farmaceutico' %}" class="btn btn-success">Agregar Farmacéutico</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mt-3 mt-md-0">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Entregas</h5>
-                    <p class="card-text">Gestioná entregas y pedidos de medicamentos a domicilio.</p>
-                    <a href="{% url 'crear_entregable' %}" class="btn btn-warning">Registrar Entrega</a>
-                </div>
-            </div>
+        <!-- Imagen derecha -->
+        <div class="col-12 col-md-3 text-center">
+            <img src="{% static 'app/images/foto5.jpg' %}" alt="Foto 5" class="img-fluid rounded shadow">
+            <p class="text-muted mt-2"></p>
         </div>
     </div>
 </div>

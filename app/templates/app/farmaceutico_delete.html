@@ -1,0 +1,18 @@
+{% extends 'app/padre.html' %}
+{% load static %}
+
+{% block title %}Eliminar Farmacéutico{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>¿Estás seguro de que querés eliminar este farmacéutico?</h2>
+
+    <p><strong>{{ object.nombre }} {{ object.apellido }}</strong></p>
+
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'listar_farmaceuticos' %}" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+</div>
+{% endblock %}

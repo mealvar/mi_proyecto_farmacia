@@ -1,17 +1,15 @@
 {% extends 'app/padre.html' %}
-{% load static %}
-
 {% block title %}Formulario {{ titulo }}{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="mb-4">Agregar {{ titulo }}</h2>
+    <h2 class="mb-4"> {{ titulo }}</h2>
 
     {% if formulario.errors %}
         <div class="alert alert-danger">Por favor corregí los errores en el formulario.</div>
     {% endif %}
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data" novalidate>
         {% csrf_token %}
         <table class="table table-borderless">
             {{ formulario.as_table }}

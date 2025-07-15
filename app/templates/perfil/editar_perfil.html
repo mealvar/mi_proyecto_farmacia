@@ -1,0 +1,25 @@
+{% extends 'app/padre.html' %}
+{% load static %}
+
+{% block title %}Editar perfil{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Editar Perfil</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <h5>Información del usuario</h5>
+        {{ user_form.as_p }}
+
+        <h5 class="mt-4">Información adicional</h5>
+        {{ perfil_form.as_p }}
+
+        <div class="d-flex gap-3 mt-3">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a href="{% url 'cambiar_password' %}" class="btn btn-warning">Cambiar contraseña</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Resultados de la búsqueda</h2>
+
+    {% if resultados %}
+        <div class="list-group">
+            {% for medicamento in resultados %}
+                <a href="{% url 'medicamento_detail' medicamento.pk %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ medicamento.nombre }}</h5>
+                        <small class="text-muted">Stock: {{ medicamento.stock }}</small>
+                    </div>
+                    <p class="mb-1">{{ medicamento.droga|truncatechars:100 }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            No se encontraron medicamentos que coincidan con la búsqueda.
+        </div>
+    {% endif %}
+
+    <a href="{% url 'buscar_medicamento' %}" class="btn btn-secondary mt-4">Nueva búsqueda</a>
+</div>
+{% endblock %}

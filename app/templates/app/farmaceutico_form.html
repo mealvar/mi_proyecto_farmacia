@@ -1,0 +1,36 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">{{ titulo }}</h2>
+
+    {% if form.errors %}
+      <div class="alert alert-danger">
+        Por favor corregí los errores en el formulario.
+      </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                {{ field }}
+
+                {% if field.help_text %}
+                    <div class="form-text">{{ field.help_text }}</div>
+                {% endif %}
+
+                {% for error in field.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

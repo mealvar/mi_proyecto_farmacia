@@ -1,0 +1,12 @@
+{% extends 'app/padre.html' %}
+
+{% block content %}
+<h2>¿Estás seguro de que querés eliminar la entrega?"{{ object.nombre }}"?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
+
+<a href="{% url 'detalle_entregable' object.pk %}">Cancelar</a>
+{% endblock %}
