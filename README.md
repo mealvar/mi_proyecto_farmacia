@@ -55,40 +55,28 @@ Usá la barra de búsqueda para encontrar medicamentos rápidamente por nombre.
 Clonar el repositorio:
 
 bash
-Copiar
-Editar
 git clone https://github.com/tu-usuario/tu-repo.git
 cd tu-repo
 Crear un entorno virtual (opcional pero recomendado):
 
 bash
-Copiar
-Editar
 python -m venv env
 source env/bin/activate  # En Windows: env\Scripts\activate
 Instalar las dependencias:
 
 bash
-Copiar
-Editar
 pip install -r requirements.txt
 Aplicar las migraciones:
 
 bash
-Copiar
-Editar
 python manage.py migrate
 Crear un superusuario:
 
 bash
-Copiar
-Editar
 python manage.py createsuperuser
 Ejecutar el servidor de desarrollo:
 
 bash
-Copiar
-Editar
 python manage.py runserver
 Abrir la página:
 
