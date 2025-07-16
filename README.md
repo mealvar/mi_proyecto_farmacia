@@ -10,46 +10,47 @@ Este es el proyecto final desarrollado para el curso de Python de Coderhouse. Se
 
 🧪 Qué se puede hacer en la página
 💊 Medicamentos
-Agregar nuevos medicamentos
 
-Ver la lista completa
+-Agregar nuevos medicamentos
 
-Buscar por nombre
+-Ver la lista completa
 
-Editar y eliminar medicamentos
+-Buscar por nombre
+
+-Editar y eliminar medicamentos
 
 🧑‍⚕️ Farmacéuticos
-Agregar farmacéuticos
+-Agregar farmacéuticos
 
-Listar, editar y eliminar datos
+-Listar, editar y eliminar datos
 
 📦 Entregas
-Registrar entregas de medicamentos
+-Registrar entregas de medicamentos
 
-Ver historial de entregas
+-Ver historial de entregas
 
-Editar y eliminar registros
+-Editar y eliminar registros
 
 👤 Perfil de usuario y avatares
-Registro e inicio de sesión de usuarios
+-Registro e inicio de sesión de usuarios
 
-Edición de perfil
+-Edición de perfil
 
-Subida de avatar visible en la barra de navegación
+-Subida de avatar visible en la barra de navegación
 
 📄 Página “Acerca de mí”
-Contiene información personal sobre la creadora del proyecto
+-Contiene información personal sobre la creadora del proyecto
 
 🧭 Cómo usar la página
-Ingresar a la página y navegar por el menú superior.
+-Ingresar a la página y navegar por el menú superior.
 
-Si no tenés cuenta, registrate desde el botón “Registrarse”.
+-Si no tenés cuenta, registrate desde el botón “Registrarse”.
 
-Iniciá sesión para acceder a las funciones de agregar, editar y eliminar elementos.
+-Iniciá sesión para acceder a las funciones de agregar, editar y eliminar elementos.
 
-En el perfil de usuario podés subir o cambiar tu avatar.
+-En el perfil de usuario podés subir o cambiar tu avatar.
 
-Usá la barra de búsqueda para encontrar medicamentos rápidamente por nombre.
+-Usá la barra de búsqueda para encontrar medicamentos rápidamente por nombre.
 
 🛠 Cómo correr este proyecto localmente
 Clonar el repositorio:
